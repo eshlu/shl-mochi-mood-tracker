@@ -4,7 +4,7 @@ Streamlit app to track and visualize Mochi Moods
 ## Features
 - Log your mood with an emoji and optional note
 - View daily mood distribution
-- Logs saved lived in Google Sheets
+- Logs saved live in Google Sheets
 - Deployed via Streamlit Cloud
 
 ## View
