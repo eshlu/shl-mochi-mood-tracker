@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+import pytz
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import plotly.express as px
@@ -33,7 +34,8 @@ with st.form("mood_form"):
 df = pd.DataFrame(sheet.get_all_records())
 
 if not df.empty:
-    today = datetime.today().date()
+    pt = pytz.timezone("America/Los_Angeles")
+    today = datetime.now(pt).date()
     df["datetime"] = pd.to_datetime(df["datetime"])
     df["Date"] = df["datetime"].dt.date
     today_df = df[df["Date"] == today]
